@@ -1,0 +1,4 @@
+collections:
+  gundem:
+    output: true  # Her doküman için ayrı sayfa oluşturur
+    permalink: /gundem/:title/  # URL yapısı
