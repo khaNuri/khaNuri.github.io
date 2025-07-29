@@ -2,35 +2,30 @@
 layout: default
 title: Gündem
 ---
+
 {% assign grouped_posts = site.posts | group_by_exp: "post", "post.date | date: '%Y %B'" %}
 
-{% for group in grouped_posts %}
-  {% assign month_key = group.name | split: " " | last %}
-  {% assign turkish_months = "Ocak,Şubat,Mart,Nisan,Mayıs,Haziran,Temmuz,Ağustos,Eylül,Ekim,Kasım,Aralık" | split: "," %}
-  {% assign english_months = "January,February,March,April,May,June,July,August,September,October,November,December" | split: "," %}
-  
-  {% for i in (0..11) %}
-    {% if month_key == english_months[i] %}
-      {% assign turkish_month = turkish_months[i] %}
-      {% break %}
-    {% endif %}
-  {% endfor %}
+{% assign turkish_months = "Ocak,Şubat,Mart,Nisan,Mayıs,Haziran,Temmuz,Ağustos,Eylül,Ekim,Kasım,Aralık" | split: "," %}
+{% assign english_months = "January,February,March,April,May,June,July,August,September,October,November,December" |
+split: "," %}
 
-  <div class="block post-card">
-    <h3 class="subtitle has-text-weight-semibold">
-      {{ group.name | split: " " | first }} {{ turkish_month }} <!-- 2025 Mayıs -->
-    </h3> 
-    <ul>
-      {% for post in group.items %}
-        <li class="is-flex is-align-items-center mb-3" style="gap: 0.75rem;">
-          <!-- <span class="has-text-weight-semibold" style="min-width: 24px; text-align: right;">
-              {{ post.date | date: "%-d" }} <!-- Sadece gün (3, 15 gibi) 
-          </span>
-         -->
-          <!-- <span class="has-text-grey-light">|</span> -->
-          <a href="{{ post.url }}">{{ post.title }}</a>
-        </li>
-      {% endfor %}
-    </ul>
+{% for group in grouped_posts %}
+{% assign month_key = group.name | split: " " | last %}
+{% for i in (0..11) %}
+{% if month_key == english_months[i] %}
+{% assign turkish_month = turkish_months[i] %}
+{% break %}
+{% endif %}
+{% endfor %}
+
+<div class="block">
+  <h1 class="title is-3 has-text-weight-semibold">
+    {{ group.name | split: " " | first }} {{ turkish_month }}
+  </h1>
+  <div class="is-flex is-flex-direction-column gap-3">
+    {% for post in group.items %}
+    <a href="{{ post.url }}" class="is-block is-size-5">{{ post.title }}</a>
+    {% endfor %}
   </div>
+</div>
 {% endfor %}

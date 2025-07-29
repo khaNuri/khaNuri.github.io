@@ -1,6 +1,7 @@
 ---
 title: Orman Yangınları
 date: 2025-07-23
+layout: post
 ---
 Türkiye’de sıcaklık rekorları kırılıyor.
 Ege ve Akdeniz’de son bir haftada 30’dan fazla orman yangını çıktı.
