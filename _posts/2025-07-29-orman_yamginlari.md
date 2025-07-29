@@ -1,6 +1,6 @@
 ---
 title: Orman Yangınları
-date: 2023-07-23
+date: 2025-07-23
 ---
 
 
