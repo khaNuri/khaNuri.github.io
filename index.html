@@ -17,9 +17,9 @@ title: Gündem
   {% endfor %}
 
   <div class="block post-card">
-    <h3 class="subtitle has-text-weight-bold">
+    <h3 class="subtitle has-text-weight-semibold">
       {{ group.name | split: " " | first }} {{ turkish_month }} <!-- 2025 Mayıs -->
-    </h3>
+    </h3> 
     <ul>
       {% for post in group.items %}
         <li class="is-flex is-align-items-center mb-3" style="gap: 0.75rem;">
