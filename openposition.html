@@ -1,0 +1,35 @@
+---
+layout: default
+title: Gündem
+---
+<div class="box">
+  <div class="field">
+    <label class="label">Symbol</label>
+    <div class="control">
+      <input class="input" type="text" id="symbolInput">
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="checkbox">
+      <input type="checkbox" id="isLongCheckbox">
+      Is Long
+    </label>
+  </div>
+
+  <div class="field">
+    <label class="label">Starting Price</label>
+    <div class="control">
+      <input class="input" type="number" id="startingPriceInput" step="any">
+    </div>
+  </div>
+
+  <div class="field is-grouped">
+    <div class="control">
+      <button onclick="savePosition()" class="button is-primary">Save</button>
+    </div>
+    <div class="control">
+      <a href="/" class="button is-light">Cancel</a>
+    </div>
+  </div>
+</div>

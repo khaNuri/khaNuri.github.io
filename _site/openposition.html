@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarih Listesi</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="/assets/custom.css">
+</head>
+<body>
+  <main class="section">
+    <div class="container content">
+      <div class="box">
+  <div class="field">
+    <label class="label">Symbol</label>
+    <div class="control">
+      <input class="input" type="text" id="symbolInput">
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="checkbox">
+      <input type="checkbox" id="isLongCheckbox">
+      Is Long
+    </label>
+  </div>
+
+  <div class="field">
+    <label class="label">Starting Price</label>
+    <div class="control">
+      <input class="input" type="number" id="startingPriceInput" step="any">
+    </div>
+  </div>
+
+  <div class="field is-grouped">
+    <div class="control">
+      <button onclick="savePosition()" class="button is-primary">Save</button>
+    </div>
+    <div class="control">
+      <a href="/" class="button is-light">Cancel</a>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </main>
+  <script src="/assets/app.js"></script>
+</body>
+</html>

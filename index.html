@@ -2,30 +2,11 @@
 layout: default
 title: Gündem
 ---
-
-{% assign grouped_posts = site.posts | group_by_exp: "post", "post.date | date: '%Y %B'" %}
-
-{% assign turkish_months = "Ocak,Şubat,Mart,Nisan,Mayıs,Haziran,Temmuz,Ağustos,Eylül,Ekim,Kasım,Aralık" | split: "," %}
-{% assign english_months = "January,February,March,April,May,June,July,August,September,October,November,December" |
-split: "," %}
-
-{% for group in grouped_posts %}
-{% assign month_key = group.name | split: " " | last %}
-{% for i in (0..11) %}
-{% if month_key == english_months[i] %}
-{% assign turkish_month = turkish_months[i] %}
-{% break %}
-{% endif %}
-{% endfor %}
-
-<div class="block">
-  <h1 class="title is-3 has-text-weight-semibold">
-    {{ group.name | split: " " | first }} {{ turkish_month }}
-  </h1>
-  <div class="is-flex is-flex-direction-column gap-3">
-    {% for post in group.items %}
-    <a href="{{ post.url }}" class="is-block is-size-5">{{ post.title }}</a>
-    {% endfor %}
-  </div>
+<div class="mb-4">
+    <a href="#" onclick="handleRefresh()" class="has-text-link has-text-weight-semibold is-size-5 mr-4">Refresh</a>
 </div>
-{% endfor %}
+<div id="positionList" class="mb-4"></div>
+
+<div class="mb-4">
+  <a href="openposition.html" class="has-text-link has-text-weight-semibold is-size-5">Open Position</a>
+</div>
